@@ -1,6 +1,6 @@
 import { Token } from '@uniswap/sdk-core'
 import { FeeAmount } from '@uniswap/v3-sdk'
-import { USDC_TOKEN, WETH_TOKEN } from './constants'
+import { AAVE_TOKEN, USDT_TOKEN, WBTC_TOKEN, WETH_TOKEN } from './constants.js'
 
 // Inputs that configure this example to run
 export interface ExampleConfig {
@@ -22,9 +22,9 @@ export const CurrentConfig: ExampleConfig = {
     mainnet: 'https://mainnet.infura.io/v3/989a33ef7f114f45b58346df500b9917',
   },
   tokens: {
-    in: USDC_TOKEN,
-    amountIn: 1000,
-    out: WETH_TOKEN,
+    in: WETH_TOKEN,
+    out: USDT_TOKEN,
+    amountIn: 1,
     poolFee: FeeAmount.MEDIUM,
   },
 }

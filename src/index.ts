@@ -1,4 +1,10 @@
-import { quote } from "./quote";
+import { quote } from "./quote.js";
 
-console.log("Quoting")
+setInterval(async () => {
+    
+    console.log({
+        timestamp: Date.now(),
+        price: await quote()
+    })
+}, 1000);
 

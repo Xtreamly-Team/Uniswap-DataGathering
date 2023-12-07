@@ -1,14 +1,14 @@
 import { ethers } from 'ethers'
-import { CurrentConfig } from './config'
+import { CurrentConfig } from './config.js'
 import { computePoolAddress } from '@uniswap/v3-sdk'
-import Quoter from '@uniswap/v3-periphery/artifacts/contracts/lens/Quoter.sol/Quoter.json'
-import IUniswapV3PoolABI from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json'
+import Quoter from '@uniswap/v3-periphery/artifacts/contracts/lens/Quoter.sol/Quoter.json' assert { type: 'json' };
+import IUniswapV3PoolABI from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json' assert { type: 'json' };
 import {
     POOL_FACTORY_CONTRACT_ADDRESS,
     QUOTER_CONTRACT_ADDRESS,
-} from './constants'
-import { getProvider } from './providers'
-import { toReadableAmount, fromReadableAmount } from './conversion'
+} from './constants.js'
+import { getProvider } from './providers.js'
+import { toReadableAmount, fromReadableAmount } from './conversion.js'
 
 export async function quote(): Promise<string> {
     const quoterContract = new ethers.Contract(

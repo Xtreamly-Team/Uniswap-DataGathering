@@ -1,5 +1,5 @@
 import { ethers, providers } from 'ethers'
-import { CurrentConfig } from './config'
+import { CurrentConfig } from './config.js'
 
 // Provider Functions
 

@@ -17,10 +17,26 @@ export const WETH_TOKEN = new Token(
   'Wrapped Ether'
 )
 
-export const USDC_TOKEN = new Token(
+export const WBTC_TOKEN = new Token(
   SupportedChainId.MAINNET,
-  '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+  '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+  18,
+  'WBTC',
+  'Wrapped Bitcoin'
+)
+
+export const AAVE_TOKEN = new Token(
+  SupportedChainId.MAINNET,
+  '0x92D6C1e31e14520e676a687F0a93788B716BEff5',
+  18,
+  'AAVE',
+  'AAVE'
+)
+
+export const USDT_TOKEN = new Token(
+  SupportedChainId.MAINNET,
+  '0xdAC17F958D2ee523a2206206994597C13D831ec7',
   6,
-  'USDC',
-  'USD//C'
+  'USDT',
+  'USDT'
 )

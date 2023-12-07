@@ -3,13 +3,14 @@
         "lib": [
             "ES2022"
         ],
-        "module": "node16",
-        "moduleResolution": "node16",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "target": "ES2022",
         "sourceMap": true,
         "outDir": "dist",
         "rootDir": "src",
         "resolveJsonModule": true,
+        "isolatedModules": true,
         "esModuleInterop": true,
         "skipLibCheck": true
     },

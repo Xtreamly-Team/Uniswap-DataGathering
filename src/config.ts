@@ -19,7 +19,7 @@ export interface ExampleConfig {
 
 export const CurrentConfig: ExampleConfig = {
   rpc: {
-    mainnet: 'https://mainnet.infura.io/v3/989a33ef7f114f45b58346df500b9917',
+    mainnet: 'https://mainnet.infura.io/v3/e2af5b5511974dc7aa9328736b0a9dbc',
   },
   tokens: {
     in: WETH_TOKEN,

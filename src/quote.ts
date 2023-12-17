@@ -33,11 +33,12 @@ export async function quote(): Promise<string> {
 }
 
 async function getPoolConstants(): Promise<{
+    poolAddress: string
     token0: string
     token1: string
     fee: number
 }> {
-    const currentPoolAddress = computePoolAddress({
+    const poolAddress = computePoolAddress({
         factoryAddress: POOL_FACTORY_CONTRACT_ADDRESS,
         tokenA: CurrentConfig.tokens.in,
         tokenB: CurrentConfig.tokens.out,
@@ -45,7 +46,7 @@ async function getPoolConstants(): Promise<{
     })
 
     const poolContract = new ethers.Contract(
-        currentPoolAddress,
+        poolAddress,
         IUniswapV3PoolABI.abi,
         getProvider()
     )
@@ -56,6 +57,7 @@ async function getPoolConstants(): Promise<{
     ])
 
     return {
+        poolAddress,
         token0,
         token1,
         fee,

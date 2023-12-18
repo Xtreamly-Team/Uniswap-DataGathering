@@ -13,6 +13,10 @@ export const EthUsdtPoolAddresses = ['0x4e68ccd3e89f51c3074ca5072bbac773960dfa36
         '0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b',
         '0xc5af84701f98fa483ece78af83f11b6c38aca71d',]
 
+export const POOLS_DICTIONARY = {
+    'ETH-USDT': EthUsdtPoolAddresses,
+}
+
 // Currencies and Tokens
 
 export const WETH_TOKEN = new Token(

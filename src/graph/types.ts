@@ -1,6 +1,8 @@
 export interface PoolData {
     // basic token info
     address: string
+    blockNumber: number
+    timestamp: number
     feeTier: number
 
     token0: {
@@ -73,6 +75,15 @@ export interface PoolFields {
     totalValueLockedToken0: string
     totalValueLockedToken1: string
     totalValueLockedUSD: string
+}
+
+export interface BlockData {
+    id: string
+    timestamp: number
+    gasUsed: number
+    gasLimit: number
+    number: number
+    size: number
 }
 
 export interface BlockFields {

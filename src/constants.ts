@@ -7,6 +7,12 @@ export const POOL_FACTORY_CONTRACT_ADDRESS =
 export const QUOTER_CONTRACT_ADDRESS =
   '0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6'
 
+
+export const EthUsdtPoolAddresses = ['0x4e68ccd3e89f51c3074ca5072bbac773960dfa36',
+        '0x11b815efb8f581194ae79006d24e0d814b7697f6',
+        '0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b',
+        '0xc5af84701f98fa483ece78af83f11b6c38aca71d',]
+
 // Currencies and Tokens
 
 export const WETH_TOKEN = new Token(

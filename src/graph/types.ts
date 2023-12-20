@@ -94,3 +94,82 @@ export interface BlockFields {
     number: string
     size: string
 }
+
+// The following is the type definition for the data returned by the subgraph.
+export interface SwapFields {
+    id: string
+    sender: string
+    recipient: string
+    amount0: string
+    amount1: string
+    amountUSD: string
+    sqrtPriceX96: string
+    tick: string
+    timestamp: string
+    origin: string
+    pool: {
+        id: string
+    }
+    token0: {
+        id: string
+        symbol: string
+    }
+    token1: {
+        id: string
+        symbol: string
+    }
+    transaction: {
+        blockNumber: string
+        gasPrice: string
+        gasUsed: string
+        id: string
+        timestamp: string
+    }
+}
+
+export class SwapData {
+    blockNumber: number
+    timestamp: number
+    gasPrice: number
+    gasUsed: number
+    hash: string
+    amount0: number
+    amount1: number
+    amountUSD: number
+    sqrtPriceX96: number
+    executionPrice: number
+    tick: number
+    sender: string
+    recipient: string
+    origin: string
+    poolAddress: string
+    token0Address: string
+    token1Address: string
+    token0Symbol: string
+    token1Symbol: string
+    isBuy: boolean
+
+    constructor(swapData: SwapFields) {
+        this.hash = swapData.transaction.id
+        this.blockNumber = parseInt(swapData.transaction.blockNumber)
+        this.timestamp = parseInt(swapData.transaction.timestamp)
+        this.gasPrice = parseFloat(swapData.transaction.gasPrice)
+        this.gasUsed = parseFloat(swapData.transaction.gasUsed)
+        this.amount0 = parseFloat(swapData.amount0)
+        this.amount1 = parseFloat(swapData.amount1)
+        this.amountUSD = parseFloat(swapData.amountUSD)
+        this.sqrtPriceX96 = parseFloat(swapData.sqrtPriceX96)
+        this.executionPrice = Math.abs(parseFloat(swapData.amount1) / parseFloat(swapData.amount0))
+        this.tick = parseInt(swapData.tick)
+        this.sender = swapData.sender
+        this.recipient = swapData.recipient
+        this.origin = swapData.origin
+        this.poolAddress = swapData.pool.id
+        this.token0Address = swapData.token0.id
+        this.token1Address = swapData.token1.id
+        this.token0Symbol = swapData.token0.symbol
+        this.token1Symbol = swapData.token1.symbol
+        this.isBuy = this.amount0 > 0
+        return this
+    }
+}
